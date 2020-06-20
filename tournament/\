@@ -1,0 +1,32 @@
+use std::collections::HashMap;
+
+#[derive(Default, Debug)]
+struct Team {
+    name: String,
+    wins: u32,
+    draws: u32,
+    losses: u32,
+}
+// implement identifier for a team in the hashset
+
+fn gather_data(data: &str) -> HashMap<String, Team> {
+    let mut map = HashMap::new();
+    //data.lines().map(|line| (t1, t2, o) = line.split(";")  )
+    let matches: Vec<&str> = data.split("\n").collect();
+    //let counter = letters.entry(ch).or_insert(0);
+    for result in matches {
+        let match_result: Vec<&str> = result.split(";").collect();
+    }
+
+    map
+}
+
+pub fn tally(match_results: &str) -> String {
+    let data = gather_data(match_results);
+    let team = Team {
+        ..Default::default()
+    };
+    println!("{:?}", team);
+    let result = String::new();
+    format!("Team{:<WIDTH$} | MP |  W |  D |  L |  P", " ", WIDTH = 26) // WIDTH$ looks for width in arguments, :< left aligned 0th arg
+}
